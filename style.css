@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    color: #333;
+    background-color: white;
+}
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    background-color: #333;
+}
+.container .navbar .navbar_logo a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+.container .navbar .navbar_menu .navbar_content {
+    display: flex ;
+    list-style-type: none;
+    position: relative;
+}
+.container .navbar .navbar_menu .navbar_content li a {
+   color: white;
+   text-decoration: none;
+   display: block;
+   padding: 20px 25px;
+}
+.container .navbar .navbar_menu .navbar_content li a:hover {
+   background-color: rgb(0, 153, 255);
+ }
+.container .navbar .navbar_menu .navbar_content li ul {
+    list-style-type: none;
+    position: absolute;
+    background-color: rgb(56, 56, 56);
+    display: none;
+}
+.container .navbar .navbar_menu .navbar_content li.active ul {
+    display: block;
+}
+.container .navbar .navbar_menu .navbar_content li ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+
+}
+.container .navbar .navbar_menu .navbar_content li ul li a:hover {
+    background-color: rgb(0, 153, 255);
+ }
+.container .navbar .navbar_menu .navbar_mobile {
+    display: none;
+}
+@media (max-width: 992px) {
+    .container .navbar {
+        flex-direction: column;
+    }
+    .container .navbar .navbar_logo {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .container .navbar .navbar_menu {
+        width: 100%;
+    }
+    .container .navbar .navbar_menu .navbar_content {
+        flex-direction: column;
+        padding: 10px 0px 20px 0px;
+        display: none;
+    }
+    .container .navbar .navbar_menu .navbar_content.active {
+        display: block;
+    }
+    .container .navbar .navbar_menu .navbar_content li ul {
+        position: static;
+        padding-left: 30px;
+    }
+    .container .navbar .navbar_menu .navbar_mobile {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        z-index: 1000;
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle span,
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle span::after,
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle span::before {
+        position: absolute;
+        content: "";
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        transition: 0.5 ease-in-out;
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle span::before {
+       top: -10px;
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle span::after {
+        bottom: -10px;
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle.active span {
+        background-color: transparent;
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle.active span::before {
+        transform: rotate(-45deg);
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle.active span::after {
+        transform: rotate(45deg);
+    }
+    .container .navbar .navbar_menu .navbar_mobile .navbar_toggle.active span::before {
+        top: 0px;
+     }
+     .container .navbar .navbar_menu .navbar_mobile .navbar_toggle.active span::after {
+         bottom: 0px;
+     }
+
+}
